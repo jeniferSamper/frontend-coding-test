@@ -10,10 +10,8 @@ import { NavBar } from '../../../components/header';
 const Id = () => {
   const [viewPeopleId, setViewPeopleId] = useState([])
   const [viewTasksId, setViewTasksId] = useState([])
-  let stateTasks;
 
   const router = useRouter();
-  console.log(router);
   const id = router.query.id;
 
 
@@ -22,14 +20,6 @@ const Id = () => {
     const tasks = await listTask(id)
     setViewPeopleId(data)
     setViewTasksId(tasks)
-    console.log(viewTasksId);
-    viewTasksId.completed ? stateTasks ='completed': stateTasks ='incompleted' 
-    // if(!viewTasksId.completed){
-    //   stateTasks ='completed' 
-    // } else{
-    //   stateTasks ='incompleted' 
-    // }
-    console.log('llego la tarea', tasks);
   }
 
   useEffect(() => {
@@ -68,7 +58,7 @@ const Id = () => {
             <li>Description: {viewTasksId.description}</li>
             <li>Start Date: {viewTasksId.startDate}</li>
             <li>End Date: {viewTasksId.endDate}</li>
-            <li>State: {stateTasks}</li>
+            <li>State: {viewTasksId.completed ? 'completed': 'incompleted' }</li>
           </ul>
         </div>
       </div>

@@ -15,7 +15,6 @@ const viewOnePeople = async (id)=> {
 }
 
 const listTask = async (id)=> {
-   console.log('entra el la peticion');
    const result = await fetch(`http://localhost:3001/tasks/${id}`)
    const data = await result.json()
    return data
