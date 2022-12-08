@@ -4,7 +4,6 @@ import { listPeople } from "../petitions/userPetition"
 import Script from "next/script"
 import styles from '../styles/index.module.css'
 import { NavBar } from "../components/header"
-NavBar
 
 
 

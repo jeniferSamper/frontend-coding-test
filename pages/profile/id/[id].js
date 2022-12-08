@@ -5,11 +5,13 @@ import Image from 'next/image'
 import styles from "./id.module.css"
 import Link from 'next/link';
 import { NavBar } from '../../../components/header';
+import { TasksItem } from '../../../components/taskItems';
 
 
 const Id = () => {
   const [viewPeopleId, setViewPeopleId] = useState([])
   const [viewTasksId, setViewTasksId] = useState([])
+  
 
   const router = useRouter();
   const id = router.query.id;
@@ -30,7 +32,6 @@ const Id = () => {
   }, [id])
 
 
-
   return (
     <React.Fragment>
       <NavBar />
@@ -38,33 +39,33 @@ const Id = () => {
       <div className={styles.viewOnePeople}>
         <div className={styles.btns}>
           <button className={styles.btn}>
-            <Link href={`/profile/id/${viewPeopleId.id}/edit`} className={styles.btn}>Edit</Link>
+            <Link href={`/profile/id/edit/${viewPeopleId.id}`} className={styles.btn}>Edit Profile</Link>
           </button>
         </div>
-        <h1>Description of the People</h1>
-        <div className={styles.peopleCard}>
-          <Image src={viewPeopleId.picture} alt={viewPeopleId.fullName} className={styles.image} width="200" height="200" />
-          <h3>FullName: {viewPeopleId.fullName}</h3>
-          <h3>Nickname: {viewPeopleId.nickname}</h3>
-          <h3>Age: {viewPeopleId.age}</h3>
-          <h3>Occupation: {viewPeopleId.occupation}</h3>
-          <h3>Gender: {viewPeopleId.gender}</h3>
-        </div>
-        <h1>tasks</h1>
+        <section className={styles.container_viewOnePeople}>
+          <div>
+            <h1 className={styles.title}>Description of the People</h1>
+            <div className={styles.peopleCard}>
+              <Image src={viewPeopleId.picture} alt={viewPeopleId.fullName} className={styles.image} width="200" height="200" />
+              <h3><b>FullName:</b> {viewPeopleId.fullName}</h3>
+              <h3><b>Nickname:</b> {viewPeopleId.nickname}</h3>
+              <h3><b>Age:</b> {viewPeopleId.age}</h3>
+              <h3><b>Occupation:</b> {viewPeopleId.occupation}</h3>
+              <h3><b>Gender:</b> {viewPeopleId.gender}</h3>
+            </div>
+          </div>
 
-        <div className={styles.peopleCard}>
-          <ul>
-            <li>title: {viewTasksId.title}</li>
-            <li>Description: {viewTasksId.description}</li>
-            <li>Start Date: {viewTasksId.startDate}</li>
-            <li>End Date: {viewTasksId.endDate}</li>
-            <li>State: {viewTasksId.completed ? 'completed': 'incompleted' }</li>
-          </ul>
-        </div>
+          <div>
+            <h1 className={styles.title}>Tasks</h1>
+            {viewTasksId.map(data => <TasksItem key={data.id} data ={data}></TasksItem>
+            )}
+          </div>
+        </section>
+
+
       </div>
     </React.Fragment>)
 }
 
 
 export default Id
-

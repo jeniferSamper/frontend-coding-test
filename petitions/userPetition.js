@@ -15,9 +15,21 @@ const viewOnePeople = async (id)=> {
 }
 
 const listTask = async (id)=> {
-   const result = await fetch(`http://localhost:3001/tasks/${id}`)
+   const result = await fetch(`http://localhost:3001/tasks?personId=${id}`)
    const data = await result.json()
+   
    return data
 }
 
-export {listPeople, viewOnePeople, listTask}
+const updateNewProfile = async (id, newProfile)=>{
+   console.log('llego', id, newProfile);
+   // const response = await fetch(`http://localhost:3001/people/${Id}`, {
+   //     method: 'PUT',
+   //     headers: {
+   //         'Content-Type': 'application/json'
+   //     },
+   //     body: JSON.stringify(newProfile)
+   // });
+}
+
+export {listPeople, viewOnePeople, listTask, updateNewProfile}
