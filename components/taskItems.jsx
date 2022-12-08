@@ -29,7 +29,7 @@ function TasksItem(props) {
             <div className={styles.btnsTaskItem}>
             <button className={styles.btnChangeState} onClick={() => { changeState(dataTask.completed) }}>{dataTask ? 'Mark as not completed' : 'Mark as completed'}</button>
             <button className={styles.btnEdit}>
-            <Link href={`/tasks/id/edit/${data.id}`} >Edit Task</Link>
+            <Link href={`/tasks/id/edit/${data.id}`}>Edit Task</Link>
           </button>
           </div>
         </div>

@@ -46,7 +46,8 @@ const Id = () => {
           <div>
             <h1 className={styles.title}>Description of the People</h1>
             <div className={styles.peopleCard}>
-              <Image src={viewPeopleId.picture} alt={viewPeopleId.fullName} className={styles.image} width="200" height="200" />
+              {/* <Image src={viewPeopleId.picture} alt={viewPeopleId.fullName} className={styles.image} width="200" height="200" /> */}
+              <img src={viewPeopleId.picture} alt={viewPeopleId.fullName} className={styles.image} width="200" height="200" />
               <h3><b>FullName:</b> {viewPeopleId.fullName}</h3>
               <h3><b>Nickname:</b> {viewPeopleId.nickname}</h3>
               <h3><b>Age:</b> {viewPeopleId.age}</h3>

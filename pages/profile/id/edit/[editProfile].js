@@ -1,6 +1,9 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import { updateNewProfile, viewOnePeople } from '../../../../petitions/userPetition';
+// import Image from 'next/image'
+
 
 function EditProfile() {
    const router = useRouter();
@@ -12,7 +15,6 @@ function EditProfile() {
    const getPeopleId = async (id) => {
       const data = await viewOnePeople(id)
       setViewPeopleId(data)
-      console.log('data', viewPeopleId);
    }
 
    useEffect(() => {
@@ -22,8 +24,8 @@ function EditProfile() {
       if (id) getData()
    }, [id])
 
-   const handleSubmit = () => {
-      console.log('aqui va la peticion');
+   const handleSubmit = (e) => {
+      e.preventDefault();
       updateNewProfile(viewPeopleId.id, viewPeopleId)
    }
 
@@ -32,7 +34,6 @@ function EditProfile() {
          ...viewPeopleId,
          [e.target.name]: e.target.value
       });
-      console.log('que llega', viewPeopleId);
       return viewPeopleId
    };
 
@@ -43,22 +44,40 @@ function EditProfile() {
       fr.onload = () => setImgPreview(fr.result)
       return uploadedImg
    }
+   async function uploadImgWeb (img) {
+
+      const form = new FormData();
+      form.append('image', img);
+  
+      const apiKey = 'fc4cacd19eee783715a306dd5dc7c876'
+    
+      const url = `https://api.imgbb.com/1/upload?key=${apiKey}`
+  
+      const petition = {
+          method: 'POST',
+          body: form
+      }
+  
+      const response = await fetch(url,petition) 
+      const dataResponse = await response.json()
+      return dataResponse.data.url
+  }
 
    const handleImage = async (e) => {
       const urlImgUpload = await onChangeImg(e, setImgPreview)
       const urlImageWeb = await uploadImgWeb(urlImgUpload)
+      console.log('url', urlImageWeb);
       setViewPeopleId({
          ...viewPeopleId,
          picture: urlImageWeb
       })
    }
 
-   const onCancel = () => {}
 
    return (
       <div>
          <h5>Edit Profile</h5>
-         <form className="form createUserForm"
+         <form className="form"
             onSubmit={handleSubmit}
          >
 
@@ -81,7 +100,6 @@ function EditProfile() {
                onChange={handleChenge}
                required
             />
-
             <label htmlFor="nickname">Nickname:</label>
             <input
                type="texto"
@@ -108,28 +126,25 @@ function EditProfile() {
                type="texto"
                name="occupation"
                placeholder="type an occupation"
-               defaultValue={viewPeopleId.nickname}
+               defaultValue={viewPeopleId.occupation}
                onChange={handleChenge}
                required
             />
             <div>
                <label htmlFor="picture">Picture:</label>
                <input type="file"
-                  className="picture"
                   name="picture"
                   onChange={handleImage}
                />
-               <img src={imgPreview} alt="imgPreview" className="imgPreview" />
+               <img src={imgPreview} alt="imgPreview" />
             </div>
             <div>
                <button type="submit">
-                  Up Date
+               <Link href={`/profile/id/${id}`} > Up Date</Link>
                </button>
                <button
                   type="button"
-                  onClick={onCancel}
-               >
-                  Cancel
+               ><Link href={`/profile/id/${id}`} > Cancel</Link>
                </button>
             </div>
          </form>

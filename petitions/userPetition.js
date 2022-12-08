@@ -22,14 +22,33 @@ const listTask = async (id)=> {
 }
 
 const updateNewProfile = async (id, newProfile)=>{
-   console.log('llego', id, newProfile);
-   // const response = await fetch(`http://localhost:3001/people/${Id}`, {
-   //     method: 'PUT',
-   //     headers: {
-   //         'Content-Type': 'application/json'
-   //     },
-   //     body: JSON.stringify(newProfile)
-   // });
+   const response = await fetch(`http://localhost:3001/people/${id}`, {
+       method: 'PUT',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(newProfile)
+   });
+   (console.log({response}));
 }
 
-export {listPeople, viewOnePeople, listTask, updateNewProfile}
+const viewOneTask = async (id)=> {
+   const result = await fetch(`http://localhost:3001/tasks/${id}`)
+   const data = await result.json()
+   
+   return data
+}
+
+const updateNewTask = async (id, newTask)=>{
+   console.log('llego', id, newTask);
+   const response = await fetch(`http://localhost:3001/tasks/${id}`, {
+       method: 'PUT',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(newTask)
+   });
+   (console.log({response}));
+}
+
+export {listPeople, viewOnePeople, listTask, updateNewProfile, viewOneTask, updateNewTask}
