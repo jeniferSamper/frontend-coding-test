@@ -1,16 +1,20 @@
 import { getPeople } from "../petitions/userPetition"
+import styles from "./peopleItem.module.css"
+import Link from 'next/link';
+import Image from 'next/image'
+
 
 function PeopleItem(props) {
-    const viewPeople = async()=>{
-       //redirigir a otra pagina
-    }
     return (
-        <div className="peopleItem" onClick={viewPeople}>
-            <img src={props.picture} alt={props.fullName} className='imgPeople' />
-            <h3 className="fullName">{props.fullName}</h3>
-            <h3 className="age">{props.age}</h3>
-            <h3 className="occupation">{props.occupation}</h3>
+        <Link href={`/profile/id/${props.id}`}>
+        <div className={styles.peopleItem}>
+            <Image src={props.picture} alt={props.fullName} className={styles.image} width="200" height="200"/>
+            <h3>{props.fullName}</h3>
+            <h3>{props.age}</h3>
+            <h3>{props.occupation}</h3>
+           
         </div>
+     </Link>
     )
   }
   

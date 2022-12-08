@@ -8,4 +8,17 @@ const listPeople = async ()=> {
    return data
 }
 
-export {listPeople}
+const viewOnePeople = async (id)=> {
+   const result = await fetch(`http://localhost:3001/people/${id}`)
+   const data = await result.json()
+   return data
+}
+
+const listTask = async (id)=> {
+   console.log('entra el la peticion');
+   const result = await fetch(`http://localhost:3001/tasks/${id}`)
+   const data = await result.json()
+   return data
+}
+
+export {listPeople, viewOnePeople, listTask}

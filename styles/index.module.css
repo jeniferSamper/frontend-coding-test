@@ -1,0 +1,14 @@
+.viewListPeople{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 90%;
+        margin: auto;
+        padding: 3%;
+}
+
+.pageViewPeople{
+        display: grid;
+        place-items: center;
+        margin-top: 2%;
+}

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react"
 import { PeopleItem } from "../components/peopleItem"
 import { listPeople } from "../petitions/userPetition"
-import Head from "next/head"
 import Script from "next/script"
+import styles from '../styles/index.module.css'
+import { NavBar } from "../components/header"
+NavBar
 
 
 
 function HomePage() {
   const [viewListPeople, setViewListPeople] = useState([])
-  const [orderList, setOrderList] = useState(false)
+  const [orderList, setOrderList] = useState(true)
 
   const getListPeople = async () => {
     let data = await listPeople()
@@ -36,12 +38,13 @@ function HomePage() {
 
   return (
     <React.Fragment>
-    
       <Script src="https://kit.fontawesome.com/1b2b17e9e9.js" crossorigin="anonymous"></Script>
-      
+      <NavBar></NavBar>
+      <div className={styles.pageViewPeople}>
       <button onClick={changeOrder}  className="fa-solid fa-up-down"></button>
-      <div className="viewListPeople_container">
+      <div className={styles.viewListPeople}>
         {viewListPeople.map(data => (<PeopleItem key={data.id} fullName={data.fullName} age={data.age} occupation={data.occupation} picture={data.picture} id={data.id} />))}
+      </div>
       </div>
     </React.Fragment>)
 }

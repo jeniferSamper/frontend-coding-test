@@ -1,0 +1,18 @@
+.peopleItem{
+    border: solid 2px black;
+    background-color: #3A3636;
+    width: 35%;
+    max-width: 250px;
+    max-height: 500px;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.image{
+    /* width: 50%; */
+    border-radius: 50%;
+}
+
