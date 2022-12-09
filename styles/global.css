@@ -1,0 +1,14 @@
+
+
+h2{
+    color:white
+}
+
+.fa-up-down {
+        border-radius: 5px;
+        background-color: red;
+        color: yellow;
+        width: 7vw;
+        height: 7vh;
+        font-size: 2rem;
+}

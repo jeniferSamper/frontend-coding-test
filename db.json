@@ -7,16 +7,16 @@
       "occupation": "Software Developer",
       "nickname": "Johnny",
       "gender": "Male",
-      "picture": "https://randomuser.me/api/portraits/lego/1.jpg"
+      "picture": "https://i.ibb.co/BVx8jM0/formula1.jpg"
     },
     {
       "id": 2,
       "fullName": "Jane Smith",
-      "age": 27,
+      "age": "28",
       "occupation": "Doctor",
       "nickname": "Jane",
-      "gender": "Female",
-      "picture": "https://randomuser.me/api/portraits/lego/2.jpg"
+      "gender": "Male",
+      "picture": "https://i.ibb.co/nr411jg/doctor.jpg"
     },
     {
       "id": 3,
@@ -30,7 +30,7 @@
     {
       "id": 4,
       "fullName": "Alice Williams",
-      "age": 29,
+      "age": "30",
       "occupation": "Lawyer",
       "nickname": "Ali",
       "gender": "Female",
@@ -39,7 +39,7 @@
     {
       "id": 5,
       "fullName": "Michael Brown",
-      "age": 41,
+      "age": "46",
       "occupation": "Construction Worker",
       "nickname": "Mike",
       "gender": "Male",
@@ -68,7 +68,7 @@
       "fullName": "Samantha Taylor",
       "age": 26,
       "occupation": "Graphic Designer",
-      "nickname": "Sam",
+      "nickname": "Sams",
       "gender": "Female",
       "picture": "https://randomuser.me/api/portraits/lego/8.jpg"
     },
@@ -89,6 +89,27 @@
       "nickname": "Ash",
       "gender": "Female",
       "picture": "https://randomuser.me/api/portraits/lego/1.jpg"
+    },
+    {
+      "id": 11
+    },
+    {
+      "fullName": "paola ",
+      "age": "34",
+      "nickname": "pao",
+      "gender": "Female",
+      "occupation": "Graphic Designer",
+      "picture": "https://i.ibb.co/BVx8jM0/formula1.jpg",
+      "id": 12
+    },
+    {
+      "fullName": "Samantha Smith",
+      "age": "30",
+      "nickname": "samys",
+      "gender": "Female",
+      "occupation": "Teacher",
+      "picture": "https://i.ibb.co/yPDmMV2/women.jpg",
+      "id": 13
     }
   ],
   "tasks": [
@@ -123,16 +144,16 @@
       "id": 4,
       "title": "Task 4",
       "description": "This is the fourth task on the list.",
-      "completed": true,
+      "completed": "false",
       "startDate": "2022-12-04",
       "endDate": "2022-12-06",
       "personId": 4
     },
     {
       "id": 5,
-      "title": "Task 5",
+      "title": "Task 5 yes",
       "description": "This is the fifth task on the list.",
-      "completed": false,
+      "completed": "false",
       "startDate": "2022-12-04",
       "endDate": null,
       "personId": 5
@@ -184,8 +205,8 @@
     {
       "id": 11,
       "title": "Task 11",
-      "description": "This is the eleventh task on the list.",
-      "completed": false,
+      "description": "This is the eleventh task on the list",
+      "completed": "false",
       "startDate": "2022-12-04",
       "endDate": null,
       "personId": 1
@@ -246,11 +267,11 @@
     },
     {
       "id": 18,
-      "title": "Task 18",
+      "title": "Task 18 yess",
       "description": "This is the eighteenth task on the list.",
-      "completed": false,
+      "completed": "true",
       "startDate": "2022-12-04",
-      "endDate": null,
+      "endDate": "2022-12-11",
       "personId": 8
     },
     {
@@ -266,7 +287,7 @@
       "id": 20,
       "title": "Task 20",
       "description": "This is the twentieth task on the list.",
-      "completed": false,
+      "completed": "true",
       "startDate": "2022-12-04",
       "endDate": null,
       "personId": 10
