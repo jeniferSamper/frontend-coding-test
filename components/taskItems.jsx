@@ -8,7 +8,6 @@ function TasksItem(props) {
     const [dataTask, setDataTask] = useState()
     
     const data = props.data
-    console.log(data);
 
     useEffect(() => {
         setDataTask(props.data.completed)

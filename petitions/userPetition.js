@@ -29,7 +29,6 @@ const updateNewProfile = async (id, newProfile)=>{
        },
        body: JSON.stringify(newProfile)
    });
-   (console.log({response}));
 }
 
 const viewOneTask = async (id)=> {
@@ -40,7 +39,6 @@ const viewOneTask = async (id)=> {
 }
 
 const updateNewTask = async (id, newTask)=>{
-   console.log('llego', id, newTask);
    const response = await fetch(`http://localhost:3001/tasks/${id}`, {
        method: 'PUT',
        headers: {
@@ -48,11 +46,9 @@ const updateNewTask = async (id, newTask)=>{
        },
        body: JSON.stringify(newTask)
    });
-   (console.log({response}));
 }
 
 const updateNewStateTask = async (id, newState)=>{
-   console.log('llego', id, newState);
    const response = await fetch(`http://localhost:3001/tasks/${id}`, {
        method: 'PUT',
        headers: {
@@ -60,11 +56,9 @@ const updateNewStateTask = async (id, newState)=>{
        },
        body: JSON.stringify({completed: newState})
    });
-   (console.log({response}));
 }
 
 const createPeople = async (data)=>{
-   console.log('llego', data);
    const response = await fetch(`http://localhost:3001/people`, {
        method: 'POST',
        headers: {
@@ -72,7 +66,6 @@ const createPeople = async (data)=>{
        },
        body: JSON.stringify(data)
    });
-   (console.log({response}));
 }
 
 export {listPeople, viewOnePeople, listTask, updateNewProfile, viewOneTask, updateNewTask, updateNewStateTask, createPeople}

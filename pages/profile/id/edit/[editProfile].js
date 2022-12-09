@@ -70,7 +70,6 @@ function EditProfile() {
    const handleImage = async (e) => {
       const urlImgUpload = await onChangeImg(e, setImgPreview)
       const urlImageWeb = await uploadImgWeb(urlImgUpload)
-      console.log('url', urlImageWeb);
       setViewPeopleId({
          ...viewPeopleId,
          picture: urlImageWeb

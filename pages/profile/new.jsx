@@ -14,11 +14,10 @@ function NewProfile() {
 
 
    const [viewPeopleId, setViewPeopleId] = useState([])
-   const [imgPreview, setImgPreview] = useState(null)
+   const [imgPreview, setImgPreview] = useState()
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      console.log('que mando a consola', viewPeopleId);
       createPeople(viewPeopleId)
       router.push("/")
    }
@@ -60,7 +59,6 @@ function NewProfile() {
    const handleImage = async (e) => {
       const urlImgUpload = await onChangeImg(e, setImgPreview)
       const urlImageWeb = await uploadImgWeb(urlImgUpload)
-      console.log('url', urlImageWeb);
       setViewPeopleId({
          ...viewPeopleId,
          picture: urlImageWeb

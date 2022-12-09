@@ -12,7 +12,7 @@
     {
       "id": 2,
       "fullName": "Jane Smith",
-      "age": 27,
+      "age": "28",
       "occupation": "Doctor",
       "nickname": "Jane",
       "gender": "Male",
@@ -30,7 +30,7 @@
     {
       "id": 4,
       "fullName": "Alice Williams",
-      "age": 29,
+      "age": "30",
       "occupation": "Lawyer",
       "nickname": "Ali",
       "gender": "Female",
@@ -144,7 +144,7 @@
       "id": 4,
       "title": "Task 4",
       "description": "This is the fourth task on the list.",
-      "completed": true,
+      "completed": "false",
       "startDate": "2022-12-04",
       "endDate": "2022-12-06",
       "personId": 4
@@ -287,7 +287,7 @@
       "id": 20,
       "title": "Task 20",
       "description": "This is the twentieth task on the list.",
-      "completed": false,
+      "completed": "true",
       "startDate": "2022-12-04",
       "endDate": null,
       "personId": 10
