@@ -1,7 +1,7 @@
 module.exports = {
   images: {
     remotePatterns: [
-      { hostname: ['randomuser.me' , 'i.ibb.co']},
+      { hostname: 'randomuser.me' },
     ]
   }
 }

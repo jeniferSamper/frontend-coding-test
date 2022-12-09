@@ -51,4 +51,28 @@ const updateNewTask = async (id, newTask)=>{
    (console.log({response}));
 }
 
-export {listPeople, viewOnePeople, listTask, updateNewProfile, viewOneTask, updateNewTask}
+const updateNewStateTask = async (id, newState)=>{
+   console.log('llego', id, newState);
+   const response = await fetch(`http://localhost:3001/tasks/${id}`, {
+       method: 'PUT',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({completed: newState})
+   });
+   (console.log({response}));
+}
+
+const createPeople = async (data)=>{
+   console.log('llego', data);
+   const response = await fetch(`http://localhost:3001/people`, {
+       method: 'POST',
+       headers: {
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify(data)
+   });
+   (console.log({response}));
+}
+
+export {listPeople, viewOnePeople, listTask, updateNewProfile, viewOneTask, updateNewTask, updateNewStateTask, createPeople}

@@ -89,6 +89,18 @@
       "nickname": "Ash",
       "gender": "Female",
       "picture": "https://randomuser.me/api/portraits/lego/1.jpg"
+    },
+    {
+      "id": 11
+    },
+    {
+      "fullName": "paola ",
+      "age": "34",
+      "nickname": "pao",
+      "gender": "Female",
+      "occupation": "Graphic Designer",
+      "picture": "https://i.ibb.co/BVx8jM0/formula1.jpg",
+      "id": 12
     }
   ],
   "tasks": [

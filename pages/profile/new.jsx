@@ -1,35 +1,39 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
-import { NavBar } from '../../../../components/header';
-import { updateNewProfile, viewOnePeople } from '../../../../petitions/userPetition';
+// import { updateNewProfile, viewOnePeople } from '../../../../petitions/userPetition';
 // import Image from 'next/image'
 
-import styles from "./editProfile.module.css"
 
-function EditProfile() {
-   const router = useRouter();
-   const id = router.query.editProfile;
+import { NavBar } from "../../components/header"
+import { createPeople } from "../../petitions/userPetition"
+import styles from "../profile/id/edit/editProfile.module.css"
+// import styles from "./editProfile.module.css"
+
+function NewProfile() {
+//    const router = useRouter();
+//    const id = router.query.editProfile;
 
    const [viewPeopleId, setViewPeopleId] = useState([])
    const [imgPreview, setImgPreview] = useState(null)
 
-   const getPeopleId = async (id) => {
-      const data = await viewOnePeople(id)
-      setViewPeopleId(data)
-      setImgPreview(data.picture)
-   }
+//    const getPeopleId = async (id) => {
+//       const data = await viewOnePeople(id)
+//       setViewPeopleId(data)
+//       setImgPreview(data.picture)
+//    }
 
-   useEffect(() => {
-      const getData = async () => {
-         await getPeopleId(id);
-      }
-      if (id) getData()
-   }, [id])
+//    useEffect(() => {
+//       const getData = async () => {
+//          await getPeopleId(id);
+//       }
+//       if (id) getData()
+//    }, [id])
 
    const handleSubmit = (e) => {
       e.preventDefault();
-      updateNewProfile(viewPeopleId.id, viewPeopleId)
+      console.log('que mando a consola', viewPeopleId);
+      createPeople(viewPeopleId)
    }
 
    const handleChenge = (e) => {
@@ -91,7 +95,6 @@ function EditProfile() {
                   type="texto"
                   name="fullName"
                   placeholder="type a name"
-                  defaultValue={viewPeopleId.fullName}
                   onChange={handleChenge}
                   required
                />
@@ -101,7 +104,6 @@ function EditProfile() {
                   type="number"
                   name="age"
                   placeholder="type a age"
-                  defaultValue={viewPeopleId.age}
                   onChange={handleChenge}
                   required
                />
@@ -111,7 +113,6 @@ function EditProfile() {
                   type="texto"
                   name="nickname"
                   placeholder="type a nickname"
-                  defaultValue={viewPeopleId.nickname}
                   onChange={handleChenge}
                   required
                />
@@ -121,8 +122,7 @@ function EditProfile() {
                   name="gender"
                   placeholder="Select a Gender"
                   onChange={handleChenge}
-                  required
-                  value={viewPeopleId.gender}>
+                  required>
                   <option value="">Select a gender</option>
                   <option value="Female"> Female</option>
                   <option value="Male">Male</option>
@@ -133,7 +133,6 @@ function EditProfile() {
                   type="texto"
                   name="occupation"
                   placeholder="type an occupation"
-                  defaultValue={viewPeopleId.occupation}
                   onChange={handleChenge}
                   required
                />
@@ -148,10 +147,10 @@ function EditProfile() {
 
                <div className={styles.btnsEdit}>
                   <button type="submit" className={styles.btnEdit}>
-                     <Link href={`/profile/id/${id}`} > Up Date</Link>
+                     {/* <Link href={'/'} > Up Date</Link> */}
                   </button>
                   <button type="button" className={styles.btnEdit}>
-                        <Link href={`/profile/id/${id}`} > Cancel</Link>
+                        <Link href={'/'} > Cancel</Link>
                   </button>
                </div>
                </div>
@@ -162,4 +161,4 @@ function EditProfile() {
    )
 }
 
-export default EditProfile
+export default NewProfile

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from '../pages/profile/id/id.module.css'
+import { updateNewStateTask } from "../petitions/userPetition";
 
 
 
@@ -14,8 +15,14 @@ function TasksItem(props) {
         setDataTask(props.data.completed)
     }, [props])
    
-    const changeState = () => {
+    const changeState = async() => {
+        // console.log(dataTask);
         setDataTask(!dataTask)
+        // console.log(dataTask);
+        // if(dataTask== 'false'){
+        // updateNewStateTask(viewTasksId.id, dataTask)
+
+        // }
     }
     return (
         <div className={styles.peopleCard}>
@@ -29,7 +36,7 @@ function TasksItem(props) {
             <div className={styles.btnsTaskItem}>
             <button className={styles.btnChangeState} onClick={() => { changeState(dataTask.completed) }}>{dataTask ? 'Mark as not completed' : 'Mark as completed'}</button>
             <button className={styles.btnEdit}>
-            <Link href={`/tasks/id/edit/${data.id}`}>Edit Task</Link>
+            <Link href={`/tasks/id/edit/${data.id}`}>Edit</Link>
           </button>
           </div>
         </div>

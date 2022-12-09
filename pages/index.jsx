@@ -40,7 +40,10 @@ function HomePage() {
       <Script src="https://kit.fontawesome.com/1b2b17e9e9.js" crossorigin="anonymous"></Script>
       <NavBar></NavBar>
       <div className={styles.pageViewPeople}>
+        <div className={styles.btns_container}>
       <button onClick={changeOrder} className="fa-solid fa-up-down"></button>
+      <button className={styles.btn}> Add Profile</button>
+      </div>
       <div className={styles.viewListPeople}>
         {viewListPeople.map(data => (<PeopleItem key={data.id} fullName={data.fullName} age={data.age} occupation={data.occupation} picture={data.picture} id={data.id} />))}
       </div>
