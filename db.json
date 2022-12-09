@@ -39,7 +39,7 @@
     {
       "id": 5,
       "fullName": "Michael Brown",
-      "age": 41,
+      "age": "46",
       "occupation": "Construction Worker",
       "nickname": "Mike",
       "gender": "Male",
@@ -101,6 +101,15 @@
       "occupation": "Graphic Designer",
       "picture": "https://i.ibb.co/BVx8jM0/formula1.jpg",
       "id": 12
+    },
+    {
+      "fullName": "Samantha Smith",
+      "age": "30",
+      "nickname": "samys",
+      "gender": "Female",
+      "occupation": "Teacher",
+      "picture": "https://i.ibb.co/yPDmMV2/women.jpg",
+      "id": 13
     }
   ],
   "tasks": [
@@ -142,9 +151,9 @@
     },
     {
       "id": 5,
-      "title": "Task 5",
+      "title": "Task 5 yes",
       "description": "This is the fifth task on the list.",
-      "completed": false,
+      "completed": "false",
       "startDate": "2022-12-04",
       "endDate": null,
       "personId": 5
@@ -196,8 +205,8 @@
     {
       "id": 11,
       "title": "Task 11",
-      "description": "This is the eleventh task on the list.",
-      "completed": false,
+      "description": "This is the eleventh task on the list",
+      "completed": "false",
       "startDate": "2022-12-04",
       "endDate": null,
       "personId": 1

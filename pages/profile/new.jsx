@@ -1,5 +1,5 @@
 import Link from 'next/link';
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 // import { updateNewProfile, viewOnePeople } from '../../../../petitions/userPetition';
 // import Image from 'next/image'
@@ -11,7 +11,7 @@ import styles from "../profile/id/edit/editProfile.module.css"
 // import styles from "./editProfile.module.css"
 
 function NewProfile() {
-//    const router = useRouter();
+   const router = useRouter();
 //    const id = router.query.editProfile;
 
    const [viewPeopleId, setViewPeopleId] = useState([])
@@ -34,6 +34,7 @@ function NewProfile() {
       e.preventDefault();
       console.log('que mando a consola', viewPeopleId);
       createPeople(viewPeopleId)
+      router.push("/")
    }
 
    const handleChenge = (e) => {
@@ -88,7 +89,7 @@ function NewProfile() {
             <form className={styles.form}
                onSubmit={handleSubmit}
             >
-               <h1>Edit Profile</h1>
+               <h1>New Profile</h1>
                <div className={styles.input_container}>
                <label htmlFor="fullName">FullName:</label>
                <input
@@ -147,7 +148,7 @@ function NewProfile() {
 
                <div className={styles.btnsEdit}>
                   <button type="submit" className={styles.btnEdit}>
-                     {/* <Link href={'/'} > Up Date</Link> */}
+                     Up Date
                   </button>
                   <button type="button" className={styles.btnEdit}>
                         <Link href={'/'} > Cancel</Link>

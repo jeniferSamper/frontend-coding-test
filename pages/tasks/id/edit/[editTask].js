@@ -39,7 +39,7 @@ function EditTask() {
          completed: 'true' })
       }
       updateNewTask(viewTasksId.id, viewTasksId)
-      // updateNewProfile(viewPeopleId.id, viewPeopleId)
+      router.push("/")
    }
 
    const handleChenge = (e) => {
@@ -118,7 +118,7 @@ function EditTask() {
 
                   <div className={styles.btnsEdit}>
                      <button type="submit" className={styles.btnEdit}>
-                        <Link href={`/profile/id/${viewTasksId.personId}`} > Up Date</Link>
+                        Up Date
                      </button>
                      <button
                         type="button"

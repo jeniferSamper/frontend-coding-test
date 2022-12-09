@@ -30,6 +30,7 @@ function EditProfile() {
    const handleSubmit = (e) => {
       e.preventDefault();
       updateNewProfile(viewPeopleId.id, viewPeopleId)
+      router.push("/")
    }
 
    const handleChenge = (e) => {
@@ -148,7 +149,7 @@ function EditProfile() {
 
                <div className={styles.btnsEdit}>
                   <button type="submit" className={styles.btnEdit}>
-                     <Link href={`/profile/id/${id}`} > Up Date</Link>
+                      Up Date
                   </button>
                   <button type="button" className={styles.btnEdit}>
                         <Link href={`/profile/id/${id}`} > Cancel</Link>

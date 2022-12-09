@@ -4,6 +4,7 @@ import { listPeople } from "../petitions/userPetition"
 import Script from "next/script"
 import styles from '../styles/index.module.css'
 import { NavBar } from "../components/header"
+import Link from "next/link"
 
 
 
@@ -42,7 +43,7 @@ function HomePage() {
       <div className={styles.pageViewPeople}>
         <div className={styles.btns_container}>
       <button onClick={changeOrder} className="fa-solid fa-up-down"></button>
-      <button className={styles.btn}> Add Profile</button>
+      <button className={styles.btn}> <Link href={'/profile/new'}>Add Profile</Link></button>
       </div>
       <div className={styles.viewListPeople}>
         {viewListPeople.map(data => (<PeopleItem key={data.id} fullName={data.fullName} age={data.age} occupation={data.occupation} picture={data.picture} id={data.id} />))}
