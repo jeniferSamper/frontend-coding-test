@@ -10,17 +10,10 @@ function EditTask() {
    const id = router.query.editTask;
 
    const [viewTasksId, setViewTasksId] = useState([])
-   const [stateTasksId, setStateTasksId] = useState([])
 
    const getPeopleId = async (id) => {
       const tasks = await viewOneTask(id)
       setViewTasksId(tasks)
-      // if(viewTasksId.endDate == ''){
-      //    setStateTasksId('true')
-      // } else{
-      //    setStateTasksId(viewTasksId.completed)
-      // }
-
    }
 
    useEffect(() => {

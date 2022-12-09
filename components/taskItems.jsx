@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from '../pages/profile/id/id.module.css'
-import { updateNewStateTask } from "../petitions/userPetition";
 
 
 
@@ -16,13 +15,7 @@ function TasksItem(props) {
     }, [props])
    
     const changeState = async() => {
-        // console.log(dataTask);
         setDataTask(!dataTask)
-        // console.log(dataTask);
-        // if(dataTask== 'false'){
-        // updateNewStateTask(viewTasksId.id, dataTask)
-
-        // }
     }
     return (
         <div className={styles.peopleCard}>

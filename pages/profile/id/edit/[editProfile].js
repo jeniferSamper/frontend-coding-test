@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import { NavBar } from '../../../../components/header';
 import { updateNewProfile, viewOnePeople } from '../../../../petitions/userPetition';
-// import Image from 'next/image'
+import Image from 'next/image'
 
 import styles from "./editProfile.module.css"
 
@@ -12,7 +12,7 @@ function EditProfile() {
    const id = router.query.editProfile;
 
    const [viewPeopleId, setViewPeopleId] = useState([])
-   const [imgPreview, setImgPreview] = useState(null)
+   const [imgPreview, setImgPreview] = useState()
 
    const getPeopleId = async (id) => {
       const data = await viewOnePeople(id)
@@ -144,7 +144,7 @@ function EditProfile() {
                      name="picture"
                      onChange={handleImage}
                   />
-                  <img src={imgPreview} alt="imgPreview" className={styles.image}/>
+                  <Image src={imgPreview} alt="imgPreview" className={styles.image} width="80" height="80" />
                </div>
 
                <div className={styles.btnsEdit}>

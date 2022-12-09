@@ -2,33 +2,19 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 // import { updateNewProfile, viewOnePeople } from '../../../../petitions/userPetition';
-// import Image from 'next/image'
+import Image from 'next/image'
 
 
 import { NavBar } from "../../components/header"
 import { createPeople } from "../../petitions/userPetition"
 import styles from "../profile/id/edit/editProfile.module.css"
-// import styles from "./editProfile.module.css"
 
 function NewProfile() {
    const router = useRouter();
-//    const id = router.query.editProfile;
+
 
    const [viewPeopleId, setViewPeopleId] = useState([])
    const [imgPreview, setImgPreview] = useState(null)
-
-//    const getPeopleId = async (id) => {
-//       const data = await viewOnePeople(id)
-//       setViewPeopleId(data)
-//       setImgPreview(data.picture)
-//    }
-
-//    useEffect(() => {
-//       const getData = async () => {
-//          await getPeopleId(id);
-//       }
-//       if (id) getData()
-//    }, [id])
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -143,7 +129,7 @@ function NewProfile() {
                      name="picture"
                      onChange={handleImage}
                   />
-                  <img src={imgPreview} alt="imgPreview" className={styles.image}/>
+                  <Image src={imgPreview} alt="imgPreview" className={styles.image}/>
                </div>
 
                <div className={styles.btnsEdit}>
